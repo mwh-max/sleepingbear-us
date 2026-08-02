@@ -1,0 +1,38 @@
+# Turn on rewrite engine
+RewriteEngine On
+
+# 1) Force HTTPS and non-www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.sleepingbear\.us$ [NC]
+RewriteRule ^(.*)$ https://sleepingbear.us/$1 [R=301,L]
+
+# 2) Canonicalize /index.html -> /
+RedirectMatch 301 ^/index\.html$ /
+
+# 3) Normalize key pages (omit .html or trailing slash)
+RedirectMatch 301 ^/work-with-me/?$ /work-with-me.html
+RedirectMatch 301 ^/about/?$ /about.html
+RedirectMatch 301 ^/writing/?$ /writing.html
+
+# 4) Orphaned pages -> new destinations
+RedirectMatch 301 ^/projects/index\.html$ /
+Redirect 301 /contact.html /work-with-me.html
+RedirectMatch 301 ^/contact/?$ /work-with-me.html
+Redirect 301 /results.html /
+
+# 4b) Clean URLs for project pages
+RedirectMatch 301 ^/projects/load-calc/?$ /projects/load-calc.html
+RedirectMatch 301 ^/projects/percept/?$ /projects/percept.html
+RedirectMatch 301 ^/projects/sitescope/?$ /projects/sitescope.html
+RedirectMatch 301 ^/projects/civicreturn/?$ /projects/civicreturn.html
+RedirectMatch 301 ^/projects/sinktrace/?$ /projects/sinktrace.html
+
+# 5) Fix 403: redirect bare /projects/ folder to homepage
+RedirectMatch 301 ^/projects/?$ /projects.html
+
+# 6) Strip ?q= from homepage
+RewriteCond %{QUERY_STRING} (^|&)q= [NC]
+RewriteRule ^$ /? [R=301,L]
+
+# 7) Custom 404
+ErrorDocument 404 /404.html

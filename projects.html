@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects – Sleeping Bear Labs</title>
+    <meta
+      name="description"
+      content="Civic tech tools built by Sleeping Bear Labs for Kentucky and beyond — public health, field safety, civic data, and accessibility."
+    />
+    <link rel="canonical" href="https://sleepingbear.us/projects.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sleepingbear.us/projects.html" />
+    <meta property="og:title" content="Projects – Sleeping Bear Labs" />
+    <meta property="og:description" content="Civic tech tools built by Sleeping Bear Labs for Kentucky and beyond — public health, field safety, civic data, and accessibility." />
+    <meta property="og:image" content="https://sleepingbear.us/images/logo-sleepingbearlabs.png" />
+    <meta property="og:image:alt" content="Sleeping Bear Labs logo" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Sleeping Bear Labs Projects",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://kentuckymedicaidnotebook.org",
+            "name": "Kentucky Medicaid Notebook – Plain-Language Medicaid Guide"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://indianamedicaidnotebook.org",
+            "name": "Indiana Medicaid Notebook – Plain-Language Medicaid Guide"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://mwh-max.github.io/kentucky-food-insecurity/",
+            "name": "Kentucky Food Insecurity – County-Level Data Tool"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://mwh-max.github.io/civic-return",
+            "name": "Civic Return – Green Space per Resident Calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://mwh-max.github.io/percept",
+            "name": "Percept – Accessibility Audit Tool"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://mwh-max.github.io/sink-trace",
+            "name": "SinkTrace – Municipal Water Loss Tracker"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://recoverky.health",
+            "name": "RecoverKY – Plain-Language SNAP Triage Tool"
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .sbl-grid { grid-template-columns: repeat(3, 1fr); }
+
+      /* No vertical rules — horizontal only */
+      .sbl-cell { border-right: none; padding-left: 1rem; padding-right: 1rem; }
+      .sbl-cell:nth-child(odd) { border-right: none; }
+      .sbl-cell:nth-child(3n+1) { padding-left: 0; }
+      .sbl-cell:nth-child(3n) { padding-right: 0; }
+      .sbl-cell:last-child { grid-column: auto; max-width: 100%; }
+
+      @media (max-width: 860px) {
+        .sbl-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .sbl-grid { grid-template-columns: 1fr; }
+        .sbl-cell { padding-left: 0; padding-right: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">
+              <img
+                src="images/logo-sleepingbearlabs.png"
+                alt="Sleeping Bear Labs"
+                height="32"
+              />
+            </a>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <main>
+
+        <!-- Hero -->
+        <section class="sbl-page-hero">
+          <h1>Projects</h1>
+        </section>
+
+        <!-- Projects grid -->
+        <section id="projects" class="sbl-projects">
+          <hr class="sbl-section-divider" />
+          <span class="sbl-section-label">Selected Projects</span>
+          <div class="sbl-grid">
+
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Public Health</span>
+              <p class="sbl-title"><a href="projects/kymn.html">Kentucky Medicaid Notebook</a></p>
+              <p class="sbl-desc">Plain-language Medicaid guide for Kentuckians — eligibility, providers, transportation and how to apply.</p>
+              <a class="sbl-view-link" href="projects/kymn.html">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Public Health</span>
+              <p class="sbl-title"><a href="projects/indianamn.html">Indiana Medicaid Notebook</a></p>
+              <p class="sbl-desc">Plain-language Medicaid guide for Hoosiers — eligibility, providers, transportation and how to apply.</p>
+              <a class="sbl-view-link" href="projects/indianamn.html">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Civic Data</span>
+              <p class="sbl-title"><a href="https://mwh-max.github.io/kentucky-food-insecurity/" target="_blank" rel="noopener">Kentucky Food Insecurity</a></p>
+              <p class="sbl-desc">County-level food insecurity data across all 120 Kentucky counties, 2020–2023.</p>
+              <a class="sbl-view-link" href="https://mwh-max.github.io/kentucky-food-insecurity/" target="_blank" rel="noopener">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Civic Data</span>
+              <p class="sbl-title"><a href="projects/civicreturn.html">Civic Return</a></p>
+              <p class="sbl-desc">Green space per resident across Kentucky counties, calculated from federal land data.</p>
+              <a class="sbl-view-link" href="projects/civicreturn.html">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Accessibility</span>
+              <p class="sbl-title"><a href="projects/percept.html">Percept</a></p>
+              <p class="sbl-desc">Profile-based accessibility feedback for ADHD, dyslexia, low vision, and screen reader users.</p>
+              <a class="sbl-view-link" href="projects/percept.html">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Civic Data</span>
+              <p class="sbl-title"><a href="projects/sinktrace.html">SinkTrace</a></p>
+              <p class="sbl-desc">Municipal water loss tracker — traces inconsistencies across usage data, billing, and infrastructure.</p>
+              <a class="sbl-view-link" href="projects/sinktrace.html">View Project →</a>
+            </div>
+
+            <div class="sbl-cell">
+              <span class="sbl-tag">Public Health</span>
+              <p class="sbl-title"><a href="projects/recoverky.html">RecoverKY</a></p>
+              <p class="sbl-desc">SNAP triage tool for Kentuckians — eligibility reviews, benefit recovery, and EBT issues, with a state-by-state rules guide.</p>
+              <a class="sbl-view-link" href="projects/recoverky.html">View Project →</a>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="sbl-footer">
+      <div class="sbl-footer-inner">
+        <span class="sbl-footer-copy">&copy; 2026 Sleeping Bear Labs</span>
+        <nav class="sbl-footer-nav">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="writing.html">Writing</a>
+          <a href="work-with-me.html">Work With Me</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

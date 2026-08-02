@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* =============================================
+   Sleeping Bear Labs — design system (v3)
+   ============================================= */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --sbl-text: #111827;
+  --sbl-muted: #6b7280;
+  --sbl-line: #e5e7eb;
+  --sbl-bg: #faf9f7;
+  --sbl-surface: #ffffff;
+  --sbl-radius: 2px;
+}
+
+/* ---------- Base / Reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--sbl-bg);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  color: var(--sbl-text);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sbl-text);
+  outline-offset: 2px;
+}
+
+/* ---------- Navigation ---------- */
+header nav {
+  background: var(--sbl-bg);
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding: 0.75rem 0;
+  backdrop-filter: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo img {
+  height: 64px;
+  width: auto;
+}
+
+.hamburger {
+  display: none;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background: var(--sbl-text);
+  border-radius: 2px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--sbl-text);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.nav-links a:hover {
+  color: var(--sbl-muted);
+  background: none;
+}
+
+.nav-links a.active {
+  color: var(--sbl-text);
+  background: none;
+  border-bottom: 1px solid var(--sbl-text);
+  padding-bottom: 1px;
+}
+
+/* ---------- Layout ---------- */
+.main-content {
+  flex: 1;
+}
+
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+main p,
+main li {
+  max-width: none;
+}
+
+/* ---------- Home Hero ---------- */
+.sbl-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0;
+}
+
+.sbl-eyebrow {
+  display: block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sbl-muted);
+  margin: 0 0 1.25rem;
+}
+
+.sbl-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--sbl-text);
+  margin: 0 0 1.5rem;
+}
+
+.sbl-subhead {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 1.18rem;
+  line-height: 1.75;
+  color: var(--sbl-muted);
+  max-width: 58ch;
+  margin: 0 0 2rem;
+}
+
+.sbl-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sbl-cta-primary {
+  display: inline-block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  background: var(--sbl-text);
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--sbl-radius);
+  text-decoration: none;
+}
+
+.sbl-cta-primary:hover {
+  background: var(--sbl-muted);
+  color: #ffffff;
+}
+
+.sbl-cta-secondary {
+  font-size: 13px;
+  color: var(--sbl-muted);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+}
+
+.sbl-cta-secondary:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- Projects Grid ---------- */
+.sbl-projects {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.sbl-projects--home {
+  margin-top: 3.5rem;
+  padding-bottom: 0;
+}
+
+.sbl-section-divider {
+  border: none;
+  border-top: 0.5px solid var(--sbl-line);
+  margin: 0 0 2rem;
+}
+
+.sbl-section-label {
+  display: block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sbl-muted);
+  margin-bottom: 1.5rem;
+}
+
+.sbl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 0.5px solid var(--sbl-line);
+}
+
+.sbl-cell {
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding: 1.25rem 1rem 1.25rem 0;
+}
+
+.sbl-cell:nth-child(odd) {
+  border-right: 0.5px solid var(--sbl-line);
+}
+
+.sbl-cell:nth-child(even) {
+  border-right: none;
+  padding-left: 1rem;
+}
+
+.sbl-cell:last-child {
+  grid-column: 1 / -1;
+  border-right: none;
+  max-width: calc(50% - 0.5rem);
+  padding-right: 1rem;
+}
+
+.sbl-tag {
+  display: block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sbl-muted);
+  margin-bottom: 0.4rem;
+}
+
+.sbl-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--sbl-text);
+  margin: 0 0 0.4rem;
+}
+
+.sbl-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sbl-title a:hover {
+  color: var(--sbl-muted);
+}
+
+.sbl-desc {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--sbl-muted);
+  margin: 0;
+}
+
+.sbl-view-link {
+  display: inline-block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sbl-muted);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+  margin-top: 0.6rem;
+}
+
+.sbl-view-link:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- Bio Strip (home page) ---------- */
+.sbl-bio {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sbl-bio-text {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--sbl-muted);
+  max-width: 52ch;
+  margin: 0;
+}
+
+.sbl-bio-link {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sbl-muted);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+
+.sbl-bio-link:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- Inner Page Hero ---------- */
+.sbl-page-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.sbl-page-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--sbl-text);
+  margin: 0;
+}
+
+.sbl-page-hero p {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--sbl-muted);
+  max-width: 58ch;
+  margin: 1rem 0 0;
+}
+
+/* ---------- Inner Page Prose ---------- */
+.sbl-prose {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.sbl-prose hr {
+  border: none;
+  border-top: 0.5px solid var(--sbl-line);
+  margin: 0 0 2rem;
+}
+
+.sbl-prose h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sbl-muted);
+  margin: 2.5rem 0 0.75rem;
+}
+
+.sbl-prose h3 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--sbl-text);
+  margin: 2rem 0 0.5rem;
+}
+
+.sbl-prose p {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--sbl-text);
+  margin: 0 0 1rem;
+  max-width: 64ch;
+}
+
+.sbl-prose a {
+  color: var(--sbl-text);
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+}
+
+.sbl-prose a:hover {
+  color: var(--sbl-muted);
+  border-bottom-color: var(--sbl-muted);
+}
+
+.sbl-prose strong {
+  font-weight: 400;
+}
+
+.sbl-prose code {
+  font-family: monospace;
+  font-size: 0.88em;
+  color: var(--sbl-muted);
+}
+
+.sbl-prose ol,
+.sbl-prose ul {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--sbl-text);
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+  max-width: 64ch;
+}
+
+.sbl-prose li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Clip List (writing page) ---------- */
+.sbl-clip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sbl-clip-list li {
+  padding: 1rem 0;
+  border-bottom: 0.5px solid var(--sbl-line);
+}
+
+.sbl-clip-list li:first-child {
+  border-top: 0.5px solid var(--sbl-line);
+}
+
+.sbl-clip-pub {
+  display: block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sbl-muted);
+  margin-bottom: 0.3rem;
+}
+
+.sbl-clip-title {
+  display: block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--sbl-text);
+  margin-bottom: 0.3rem;
+}
+
+.sbl-clip-title a {
+  color: inherit;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+}
+
+.sbl-clip-title a:hover {
+  color: var(--sbl-muted);
+  border-bottom-color: var(--sbl-muted);
+}
+
+.sbl-clip-desc {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--sbl-muted);
+  margin: 0;
+}
+
+/* ---------- Project Links ---------- */
+.sbl-project-links {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--sbl-line);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sbl-project-links a {
+  display: inline-block;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sbl-muted);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+}
+
+.sbl-project-links a:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- CTA Block ---------- */
+.sbl-cta-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--sbl-line);
+}
+
+.sbl-cta-block p {
+  margin: 0;
+}
+
+.sbl-cta-block a {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sbl-muted);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--sbl-line);
+  padding-bottom: 1px;
+}
+
+.sbl-cta-block a:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- Footer ---------- */
+.sbl-footer {
+  border-top: 0.5px solid var(--sbl-line);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.sbl-footer-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sbl-footer-copy {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--sbl-muted);
+}
+
+.sbl-footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sbl-footer-nav a {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--sbl-muted);
+  text-decoration: none;
+}
+
+.sbl-footer-nav a:hover {
+  color: var(--sbl-text);
+}
+
+/* ---------- Mobile Nav ---------- */
+@media (max-width: 860px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--sbl-bg);
+    border-bottom: 0.5px solid var(--sbl-line);
+    padding: 0.75rem 1.5rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+  }
+
+  .nav-links a.active {
+    padding: 0.5rem 0;
+    border-bottom: none;
+  }
+}
+
+/* ---------- Mobile Layout ---------- */
+@media (max-width: 600px) {
+  .sbl-hero,
+  .sbl-projects,
+  .sbl-bio {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sbl-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sbl-cell {
+    border-right: none !important;
+    padding: 1.25rem 0;
+  }
+
+  .sbl-cell:last-child {
+    grid-column: auto;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .sbl-bio {
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+  }
+
+  .sbl-bio-link {
+    margin-top: 0.5rem;
+  }
+
+  .sbl-footer {
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+
+  .sbl-footer-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sbl-footer-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sbl-page-hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .sbl-prose {
+    padding: 0 1rem 2rem;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
+}
